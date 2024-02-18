@@ -8,6 +8,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 
 // import fontawsome
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Footer, Header } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Car Hub",
@@ -22,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={manrope.className}>
-        <NextUiProvider>{children}</NextUiProvider>
+        <NextUiProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextUiProvider>
       </body>
     </html>
   );
